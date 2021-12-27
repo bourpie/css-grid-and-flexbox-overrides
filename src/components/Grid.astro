@@ -1,0 +1,108 @@
+    <div class="container">
+        <nav>Navbar</nav>
+        <main id="main">Main</main>
+        <div id="sidebar">Sidebar</div>
+        <div id="content1">content1</div>
+        <div id="content2">content2</div>
+        <div id="content3">content3</div>
+        <footer>Footer</footer>
+    </div>
+
+    <style>
+    body {
+    margin: 0;
+}
+
+#main {
+    display: block;
+    width: 100%;
+    -ms-grid-column: 3;
+    -ms-grid-row: 3;
+    -ms-grid-column-span: 5;
+    background-color: aqua;
+    grid-area: main;
+}
+
+.container nav {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 7;
+    background-color: #f2f2f2;
+    grid-area: nav;
+}
+#sidebar {
+    background-color: #777070;
+}
+#content1 {
+    background-color: #e65959;
+}
+#content2 {
+    background-color: #eebbbb;
+}
+#content3 {
+    background-color: #59e665;
+}
+footer {
+    background-color: #9dabb8;
+}
+
+@media (min-width: 600px) {
+
+    .container {
+        height: 100vh;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr .5rem 1fr .5rem 1fr .5rem 1fr; /* Simuler grid gap avec des colonnes entre les colonnes */
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        -ms-grid-rows: 0.2fr .5rem 1.5fr .5rem 1.2fr .5rem 0.8fr;
+        grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+        grid-template-areas:
+            "nav nav nav nav"
+            "sidebar main main main"
+            "sidebar content1 content2 content3"
+            "sidebar footer footer footer";
+            grid-gap: .5rem;
+    }
+    
+    #main {
+        -ms-grid-column: 3;
+        -ms-grid-row: 3;
+        -ms-grid-column-span: 5;
+        grid-area: main;
+    }
+    
+    nav {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 7;
+        grid-area: nav;
+    }
+    #sidebar {
+        -ms-grid-row: 3;
+        -ms-grid-row-span: 5;
+        grid-area: sidebar;
+    }
+    #content1 {
+        -ms-grid-row: 5;
+        -ms-grid-column: 3;
+        grid-area: content1;
+    }
+    #content2 {
+        -ms-grid-row: 5;
+        -ms-grid-column: 5;
+        grid-area: content2;
+    }
+    #content3 {
+        -ms-grid-row: 5;
+        -ms-grid-column: 7;
+        grid-area: content3;
+    }
+    footer {
+        -ms-grid-row: 7;
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 5;
+        grid-area: footer;
+    }
+}
+    
+    </style>

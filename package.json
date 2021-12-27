@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "astro": "^0.22.1"
+  },
+  "dependencies": {
+    "html5shiv": "^3.7.3"
   }
 }
