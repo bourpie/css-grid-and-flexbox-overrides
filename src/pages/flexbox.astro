@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/MainLayout.astro'
+---
+		
+<Layout>
+	<h1>Flexbox design patterns</h1>
+    <a href="https://www.youtube.com/watch?v=vQAvjof1oe4&t=6s">https://www.youtube.com/watch?v=vQAvjof1oe4&t=6s</a>
+    <section>
+
+        <h2>Even columns</h2>
+        <div class="flex-even-columns">
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, sed.</div>
+            <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptatibus, sunt aspernatur fugiat veniam obcaecati nostrum neque molestiae vero fugit dolore officia vitae voluptate ut?</div>
+            <div>Lorem ipsum dolor sit amet.</div>
+        </div>
+    </section>
+</Layout>
+
+<style>
+
+    .flex-even-columns {
+        display: flex;
+        width: 350px;
+
+    }
+
+    .flex-even-columns > div {
+        border: 1px solid black;
+        flex-basis: 100%;
+    }
+
+</style>

@@ -1,0 +1,20 @@
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    padding-bottom: 3rem;
+}
+.main-nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    background-color: #9dabb8;
+    margin-bottom: 1rem;
+}
+h1 {
+    margin-top: 3rem;
+}
