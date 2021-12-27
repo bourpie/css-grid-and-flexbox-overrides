@@ -3,20 +3,64 @@ import Layout from '../layouts/MainLayout.astro'
 ---
 		
 <Layout>
-	<h1>Flexbox design patterns</h1>
-    <a href="https://www.youtube.com/watch?v=vQAvjof1oe4&t=6s">https://www.youtube.com/watch?v=vQAvjof1oe4&t=6s</a>
-    <section>
-
-        <h2>Even columns</h2>
-        <div class="flex-even-columns">
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, sed.</div>
-            <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptatibus, sunt aspernatur fugiat veniam obcaecati nostrum neque molestiae vero fugit dolore officia vitae voluptate ut?</div>
-            <div>Lorem ipsum dolor sit amet.</div>
+<header>
+    <div class="container">
+        <h1>Flexbox design patterns</h1>
+        <a href="https://www.youtube.com/watch?v=vQAvjof1oe4&t=6s">https://www.youtube.com/watch?v=vQAvjof1oe4&t=6s</a>
+    </div>
+</header>
+    <main>
+        <div class="container">
+            <section>
+                
+                    <h2>Even columns</h2>
+                    <div class="flex-even-columns">
+                        <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, sed.</div>
+                        <div class="col">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores voluptatibus, sunt aspernatur fugiat veniam obcaecati nostrum neque molestiae vero fugit dolore officia vitae voluptate ut?</div>
+                        <div class="col">Lorem ipsum dolor sit amet.</div>
+                    </div>
+                
+            </section>
+            <section class="gridish">
+                <h2>Grid-ish</h2>
+                <div class="gridish">
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                </div>
+            </section>
         </div>
-    </section>
+    </main>
 </Layout>
 
 <style>
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #EFEFEF;
+}
+
+
+
+header .container {
+    padding: 2rem 0;
+    
+}
+
+main .container {
+    display:flex;
+    gap: 1rem;
+}
+    .col {
+        padding: 1rem;
+        border: 1px solid #ccc;
+        background: #EFEFEF;
+    }
 
     .flex-even-columns {
         display: flex;
@@ -27,6 +71,23 @@ import Layout from '../layouts/MainLayout.astro'
     .flex-even-columns > div {
         border: 1px solid black;
         flex-basis: 100%;
+    }
+
+    .gridish {
+        width: 100% !important;
+    }
+
+    .gridish > div {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .gridish > div > div {
+        -ms-flex-: ;
+        flex: 0 1 33%; /* grow shrink width */
+        height: 150px;
     }
 
 </style>
