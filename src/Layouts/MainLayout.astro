@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/node_modules/browser-detect/dist/browser-detect.umd.js"></script>
     <script>
-        var result = browserDetect();
-        console.log(result.name);
+        var browser = browserDetect();
+        var isMobile = browser.mobile;
+        
+        console.log(browser);
         document.addEventListener('DOMContentLoaded', function() {
-            document.body.classList.add(result.name)
+            document.body.classList.add("is-" + browser.name);
+            browser.mobile && document.body.classList.add("is-mobile");
+            document.getElementById('appinfo').innerHTML = isMobile;
         });
     </script>
     <!--[if lt IE 9]>
@@ -24,7 +28,7 @@
         <a href="/cssgrid">CSS Grid</a>
         <a href="/flexbox">Flexbox</a>
     </nav>
-
     <slot />
+    <h1 id="appinfo"></h1>
 </body>
 </html>
